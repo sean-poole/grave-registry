@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cemetery Login</title>
+
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Login</h1>
+  </header>
+  
+  <div class="main-container">
+    <div class="btn-container">
+      <form action="/" method="get">
+        <button class="home-btn" type="submit">Return Home</button>
+      </form>
+    </div>
+
+    <section class="container search-container">
+      <div class="instructions">
+        <p>Enter the administrator login and password to make changes to cemetery records.</p>
+        <h4>This session will expire in 10 minutes.</h4>
+      </div>
+
+      <form action="/admin/login" method="post" id="login-form">
+        <div class="input-fields">
+          <div class="field">
+            <label for="email">Email: </label>
+            <input type="text" name="email" id="email">
+          </div>
+          <div class="field">
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password">
+          </div>
+        </div>
+        <div class="btn-container">
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>

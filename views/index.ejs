@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cemetery Register App</title>
+
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1 class="title">Cemetery Plot Search</h1>
+  </header>
+
+  <div class="main-container">  
+    <section class="container search-container">
+      <div class="instructions">
+        <a href="/admin/updatePage">Update a Record (requires login)</a>
+        <p>Enter as many values as are known and leave unknown fields blank. Leave all fields blank for a list of all available records.</p>
+        <p>Fields are not case-sensitive and partial matches are accepted.</p>
+        <p>For example: Entering "mill" in the Last Name field could return records with a last name of "Miller" "Hamill", and "Mill".</p>
+      </div>
+
+      <form action="/search" method="get" id="search-form">
+        <div class="input-fields">
+          <div class="left-col">
+            <div class="field">
+              <label for="lastName">Last Name: </label>
+              <input type="text" name="lastName" id="lastName">
+            </div>
+            <div class="field">
+              <label for="firstName">First Name: </label>
+              <input type="text" name="firstName" id="firstName">
+            </div>
+          </div>
+          <div class="right-col">
+            <div class="field">
+              <label for="birthYear">Birth Year: </label>
+              <input type="number" name="birthYear" id="birthYear" min="1700" max="2050">
+            </div>
+            <div class="field">
+              <label for="deathYear">Death Year: </label>
+              <input type="number" name="deathYear" id="deathYear" min="1700" max="2050">
+            </div>
+          </div>
+        </div>
+        <div class="btn-container">
+          <button type="submit">Search</button>
+        </div>
+      </form>
+    </section>
+    
+    <% if (records) { %>
+      <section class="container results-container">
+        <div class="section-header">
+          <h2>Search Results</h2>
+        </div>
+        <div class="table-container">
+          <table>
+            <tr class="table-headings">
+              <th>Last Name</th>
+              <th>Maiden Name</th>
+              <th>First Name</th>
+              <th>Middle Name</th>
+              <th>Title</th>
+              <th>Birth Date</th>
+              <th>Death Date</th>
+              <th>Age</th>
+              <th>Is Veteran</th>
+              <th>Section</th>
+              <th>Lot</th>
+              <th>Moved From</th>
+              <th>Moved To Lot</th>
+              <th>Notes</th>
+            </tr>
+      
+            <% records.forEach((record, i) => { %>
+              <tr class="<%= (i % 2 === 0) ? "even-row" : "odd-row" %>">
+                <% for (let entry in record) { %>
+                  <td class="result-cell"><%= record[entry] %></td>
+                <% } %>
+              </tr>
+            <% }) %>
+          </table>
+        </div>
+      </section>
+    <% } else { "No records returned." } %>
+  </div>
+</body>
+</html>
