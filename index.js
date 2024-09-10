@@ -9,6 +9,7 @@ const adminRoutes = require("./routes/admin");
 
 // Middleware
 app.set("view engine", "ejs");
+app.set("views", "./views");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -20,7 +21,6 @@ app.use(session({
     maxAge: 600000
   }
 }));
-// app.set("views", "./views");
 
 // Routes
 app.use("/", homeRoutes);
