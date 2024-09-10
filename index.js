@@ -8,9 +8,10 @@ const homeRoutes = require("./routes/home");
 const adminRoutes = require("./routes/admin");
 
 // Middleware
+app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(session({
   secret: "keyboard cat",
   resave: false,
@@ -19,8 +20,7 @@ app.use(session({
     maxAge: 600000
   }
 }));
-app.set("view engine", "ejs");
-app.set("views", __dirname + "./views");
+// app.set("views", "./views");
 
 // Routes
 app.use("/", homeRoutes);
