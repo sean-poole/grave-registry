@@ -2,7 +2,6 @@
 const express = require("express");
 const app = express();
 const session = require("express-session");
-const supabase = require("./config/supabaseConfig");
 const PORT = process.env.PORT || 3000;
 
 const homeRoutes = require("./routes/home");
