@@ -26,7 +26,6 @@ app.set("views", "./views");
 app.use("/", homeRoutes);
 app.use("/admin", adminRoutes);
 
-
 // Run server
 app.listen(PORT, () => {
   console.log(`Server is running on PORT: ${PORT}`);
