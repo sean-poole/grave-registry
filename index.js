@@ -9,6 +9,7 @@ const adminRoutes = require("./routes/admin");
 
 // Middleware
 app.use(express.static("public"));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: "keyboard cat",
@@ -19,7 +20,7 @@ app.use(session({
   }
 }));
 app.set("view engine", "ejs");
-app.set("views", "./views");
+app.set("views", __dirname + "./views");
 
 // Routes
 app.use("/", homeRoutes);
