@@ -1,6 +1,8 @@
 # 💐 Temecula Grave Registry 💐 | <a href="https://temecula-grave-registry.vercel.app/" target="_blank">Visit Here</a>
 
-<p></p>
+<p>
+  <img src="https://github.com/sean-poole/grave-registry/blob/main/preview-images/registry-preview.jpg" width="100%" alt="Temecula Grave Registry">
+</p>
 
 ## 🧩 How It's Made: 
 **Tech Used: ** EJS, Node, Supabase, CSS
