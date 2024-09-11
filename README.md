@@ -5,7 +5,7 @@
 </p>
 
 ## 🧩 How It's Made: 
-**Tech Used: ** EJS, Node, Supabase, CSS
+**Tech Used:** EJS, Node, Supabase, CSS
 
 This full-stack application simplifies the search for cemetery records at a local library. Users can enter criteria such as names and dates to find detailed grave information, including plot locations and personal details.
 
